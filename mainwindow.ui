@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GPS Utility</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QMdiArea" name="mdiArea"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDevice">
+    <property name="title">
+     <string>&amp;Device</string>
+    </property>
+    <addaction name="actionConnect"/>
+    <addaction name="actionDisconnect"/>
+    <addaction name="separator"/>
+    <addaction name="actionShare"/>
+    <addaction name="actionFind_Shared_GPS"/>
+    <addaction name="separator"/>
+    <addaction name="actionLogging_Options"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionOptions"/>
+    <addaction name="separator"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="separator"/>
+    <addaction name="actionCopy_GPS_Time_String"/>
+    <addaction name="actionCopy_GPS_Location_String"/>
+    <addaction name="actionCopy_Google_Earth_URL"/>
+    <addaction name="actionQuick_Copy_Options"/>
+   </widget>
+   <widget class="QMenu" name="menu_Shortcuts">
+    <property name="title">
+     <string>&amp;Shortcuts</string>
+    </property>
+    <addaction name="actionOpen_Google_Earth"/>
+    <addaction name="actionOpen_Google_Maps"/>
+    <addaction name="actionOpen_Yahoo_Maps"/>
+    <addaction name="separator"/>
+    <addaction name="actionManage_Shortcuts"/>
+   </widget>
+   <widget class="QMenu" name="menuLogging">
+    <property name="title">
+     <string>Logging</string>
+    </property>
+    <addaction name="actionLogging_Options_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionStart_Log_Session"/>
+    <addaction name="separator"/>
+    <addaction name="actionEnd_Log_Session"/>
+    <addaction name="actionDatabase_Options"/>
+    <addaction name="actionReports"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout_GPS_Utility"/>
+   </widget>
+   <addaction name="menuDevice"/>
+   <addaction name="menu_Edit"/>
+   <addaction name="menuLogging"/>
+   <addaction name="menu_Shortcuts"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionConnect">
+   <property name="text">
+    <string>Connect...</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+  </action>
+  <action name="actionShare">
+   <property name="text">
+    <string>Share...</string>
+   </property>
+  </action>
+  <action name="actionFind_Shared_GPS">
+   <property name="text">
+    <string>Find Shared GPS...</string>
+   </property>
+  </action>
+  <action name="actionLogging_Options">
+   <property name="text">
+    <string>Logging Options...</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionOptions">
+   <property name="text">
+    <string>Options...</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cu&amp;t</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>&amp;Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>&amp;Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionCopy_GPS_Time_String">
+   <property name="text">
+    <string>Copy GPS Time String</string>
+   </property>
+  </action>
+  <action name="actionCopy_GPS_Location_String">
+   <property name="text">
+    <string>Copy GPS Location String</string>
+   </property>
+  </action>
+  <action name="actionQuick_Copy_Options">
+   <property name="text">
+    <string>Quick Copy Options...</string>
+   </property>
+  </action>
+  <action name="actionCopy_Google_Earth_URL">
+   <property name="text">
+    <string>Copy Google Earth URL</string>
+   </property>
+  </action>
+  <action name="actionOpen_Google_Earth">
+   <property name="text">
+    <string>Open Google Earth</string>
+   </property>
+  </action>
+  <action name="actionOpen_Google_Maps">
+   <property name="text">
+    <string>Open Google Maps</string>
+   </property>
+  </action>
+  <action name="actionOpen_Yahoo_Maps">
+   <property name="text">
+    <string>Open Yahoo! Maps</string>
+   </property>
+  </action>
+  <action name="actionManage_Shortcuts">
+   <property name="text">
+    <string>Manage Shortcuts...</string>
+   </property>
+  </action>
+  <action name="actionLogging_Options_2">
+   <property name="text">
+    <string>Logging Options...</string>
+   </property>
+  </action>
+  <action name="actionStart_Log_Session">
+   <property name="text">
+    <string>Start Log Session...</string>
+   </property>
+  </action>
+  <action name="actionEnd_Log_Session">
+   <property name="text">
+    <string>End Log Session...</string>
+   </property>
+  </action>
+  <action name="actionDatabase_Options">
+   <property name="text">
+    <string>Database Options...</string>
+   </property>
+  </action>
+  <action name="actionReports">
+   <property name="text">
+    <string>Reports...</string>
+   </property>
+  </action>
+  <action name="actionAbout_GPS_Utility">
+   <property name="text">
+    <string>About GPS Utility...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

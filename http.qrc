@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/html">
+        <file>resources/html/gmapjs.html</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>resources/images/bullet_green.png</file>
+    </qresource>
+</RCC>
