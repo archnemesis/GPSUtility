@@ -58,6 +58,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <value key="QtVersionId" type="int">0</value>
    <value key="ToolChain" type="int">0</value>
+   <value key="addQDumper" type=""></value>
    <value key="buildConfiguration" type="int">2</value>
   </valuemap>
  </data>
@@ -66,6 +67,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
    <value key="QtVersionId" type="int">0</value>
+   <value key="addQDumper" type=""></value>
    <value key="buildConfiguration" type="int">0</value>
   </valuemap>
  </data>
@@ -74,7 +76,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-sGqX5xnCAo,guid=7d9fbd8e268f4b0e33a6e2bf4c92eb6b</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wfmE8FCCOA,guid=2d44be8dee3423d5e7924c374c62cfe1</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -82,8 +84,8 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=us</value>
     <value type="QString">GDM_LANG=en_US.utf8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-RCKJnF</value>
-    <value type="QString">GNOME_KEYRING_PID=1842</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-Lsg2F6</value>
+    <value type="QString">GNOME_KEYRING_PID=1659</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">HOME=/home/robin</value>
     <value type="QString">LANG=en_US.utf8</value>
@@ -94,20 +96,20 @@
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/robin</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/inara:@/tmp/.ICE-unix/1860,unix/inara:/tmp/.ICE-unix/1860</value>
+    <value type="QString">SESSION_MANAGER=local/robin-ubuntu:@/tmp/.ICE-unix/1677,unix/robin-ubuntu:/tmp/.ICE-unix/1677</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1894</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-RCKJnF/ssh</value>
+    <value type="QString">SSH_AGENT_PID=1711</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-Lsg2F6/ssh</value>
     <value type="QString">USER=robin</value>
     <value type="QString">USERNAME=robin</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-robin-QfGvNv/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-robin-QN8fEv/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=ba42a7225844d85467992be04c92e8fc-1284696939.542726-336116765</value>
+    <value type="QString">XDG_SESSION_COOKIE=c6af87395002a0dd42455c374c3653f9-1281544160.927867-52852597</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
-    <value type="QString">/home/robin/GPSUtility/GPSUtility.pro</value>
+    <value type="QString">/home/robin/Projects/GPSUtility/GPSUtility.pro</value>
     <value type="QString">-spec</value>
     <value type="QString">linux-g++</value>
     <value type="QString">-r</value>
@@ -115,7 +117,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/qmake-qt4</value>
    <value key="abstractProcess.enabled" type="bool">false</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/robin/GPSUtility</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/robin/Projects/GPSUtility</value>
   </valuemap>
  </data>
  <data>
@@ -123,7 +125,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-sGqX5xnCAo,guid=7d9fbd8e268f4b0e33a6e2bf4c92eb6b</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wfmE8FCCOA,guid=2d44be8dee3423d5e7924c374c62cfe1</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -131,8 +133,8 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=us</value>
     <value type="QString">GDM_LANG=en_US.utf8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-RCKJnF</value>
-    <value type="QString">GNOME_KEYRING_PID=1842</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-Lsg2F6</value>
+    <value type="QString">GNOME_KEYRING_PID=1659</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">HOME=/home/robin</value>
     <value type="QString">LANG=en_US.utf8</value>
@@ -143,17 +145,17 @@
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/robin</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/inara:@/tmp/.ICE-unix/1860,unix/inara:/tmp/.ICE-unix/1860</value>
+    <value type="QString">SESSION_MANAGER=local/robin-ubuntu:@/tmp/.ICE-unix/1677,unix/robin-ubuntu:/tmp/.ICE-unix/1677</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1894</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-RCKJnF/ssh</value>
+    <value type="QString">SSH_AGENT_PID=1711</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-Lsg2F6/ssh</value>
     <value type="QString">USER=robin</value>
     <value type="QString">USERNAME=robin</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-robin-QfGvNv/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-robin-QN8fEv/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=ba42a7225844d85467992be04c92e8fc-1284696939.542726-336116765</value>
+    <value type="QString">XDG_SESSION_COOKIE=c6af87395002a0dd42455c374c3653f9-1281544160.927867-52852597</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -161,7 +163,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool">true</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/robin/GPSUtility</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/robin/Projects/GPSUtility</value>
   </valuemap>
  </data>
  <data>

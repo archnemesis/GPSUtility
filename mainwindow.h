@@ -20,11 +20,8 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void setLocation(double latitude, double longitude, double altitude, double heading);
-    void setConnectedState(int connected);
     void setStatusBarText(const QString text);
-
-public slots:
-    void parseString(char *data);
+    void setGpsTime(int hours, int minutes, double seconds);
 
 protected:
     void changeEvent(QEvent *e);
@@ -49,6 +46,10 @@ private slots:
     void mapLoadStarted();
     void gpsConnected();
     void gpsDisconnected();
+
+signals:
+    void openSerialDevice(const QString device);
+    void closeSerialDevice();
 };
 
 #endif // MAINWINDOW_H

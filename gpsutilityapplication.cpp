@@ -5,9 +5,14 @@ GpsUtilityApplication::GpsUtilityApplication(int &argc, char **argv) :
     QApplication(argc, argv)
 {
     mainWindow = new MainWindow();
+    connect(mainWindow, SIGNAL(openSerialDevice(const QString)), this, SLOT(serialConnect(const QString)));
+    connect(mainWindow, SIGNAL(closeSerialDevice()), this, SLOT(serialDisconnect()));
+
     settings = new QSettings("Arch Nemesis", "GPSUtility");
     connDlg = new ConnectionDialog();
     nmeaParser = new NMEAParser();
+
+    appLoaded();
 }
 
 /**
@@ -39,13 +44,16 @@ void GpsUtilityApplication::serialLineReceived(const char *line)
     updateMainWindow();
 }
 
+void GpsUtilityApplication::appLoaded()
+{
+    mainWindow->show();
+}
+
 /**
  * Updates the main window UI.
  */
 void GpsUtilityApplication::updateMainWindow()
 {
-    //qDebug("Got serial line: %s", data);
-
     int hdg = 0, fixtype = -1, status = -1;
     double deg = 0;
     double min = 0;
@@ -58,16 +66,6 @@ void GpsUtilityApplication::updateMainWindow()
     time_t currTime = 0;
 
     if (nmeaParser->latitude() != 0 && nmeaParser->longitude() != 0) {
-
-        //locationWidget->setTime(QString("%1:%2:%3")
-        //                        .arg(nmeaParser->utcHours(), 2, 10, QChar('0'))
-        //                        .arg(nmeaParser->utcMinutes(), 2, 10, QChar('0'))
-        //                        .arg(nmeaParser->utcSeconds(), 2, 'g', -1, QChar('0')));
-        //ui->lneDop->setText(QString("%1").arg(nmeaParser->hdop()));
-
-        //
-        // determine speed, heading
-        //
         double tcl = 0;
         if (last_lat != 0 && last_lon != 0) {
             double lat1 = last_lat;
@@ -99,6 +97,7 @@ void GpsUtilityApplication::updateMainWindow()
         last_lat = nmeaParser->latitude();
         last_lon = nmeaParser->longitude();
 
+        mainWindow->setGpsTime(nmeaParser->utcHours(), nmeaParser->utcMinutes(), nmeaParser->utcSeconds());
         mainWindow->setLocation(nmeaParser->latitude(), nmeaParser->longitude(), nmeaParser->altitude(), tcl);
     }
 }
@@ -113,16 +112,29 @@ void GpsUtilityApplication::logLocationData()
 
 }
 
-void GpsUtilityApplication::serialConnect(const QString port)
+void GpsUtilityApplication::serialConnect(const QString device)
 {
-    mainWindow->setStatusBarText(QString("Connecting to GPS device on serial port %1...").arg(port));
+    mainWindow->setStatusBarText(QString("Connecting to GPS device on serial port %1...").arg(device));
 
     serialReader = new QSerialLineReader();
-    serialReader->setPort(port);
+    serialReader->setPort(device);
 
-    connect(serialReader, SIGNAL(lineReceived(char*)), this, SLOT(serialLineReceived(char*)), Qt::QueuedConnection);
-    connect(serialReader, SIGNAL(disconnected()), this, SLOT(gpsDisconnected()), Qt::QueuedConnection);
-    connect(serialReader, SIGNAL(connected()), this, SLOT(gpsConnected()), Qt::QueuedConnection);
+    connect(serialReader, SIGNAL(lineReceived(const char*)), this, SLOT(serialLineReceived(const char*)), Qt::QueuedConnection);
+    connect(serialReader, SIGNAL(disconnected()), mainWindow, SLOT(gpsDisconnected()), Qt::QueuedConnection);
+    connect(serialReader, SIGNAL(connected()), mainWindow, SLOT(gpsConnected()), Qt::QueuedConnection);
 
     serialReader->start();
+}
+
+void GpsUtilityApplication::serialDisconnect()
+{
+    if (serialReader->isRunning()) {
+        serialReader->stop();
+
+        while (!serialReader->isFinished()) {
+            qDebug("Waiting for serial device to disconnect...");
+        }
+
+        delete serialReader;
+    }
 }

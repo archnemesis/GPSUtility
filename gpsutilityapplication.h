@@ -15,7 +15,6 @@ class GpsUtilityApplication : public QApplication
 Q_OBJECT
 public:
     explicit GpsUtilityApplication(int &argc, char **argv);
-    void serialConnect(const QString port);
 
 private:
     MainWindow *mainWindow;
@@ -25,6 +24,7 @@ private:
     QString serialPort;
     NMEAParser *nmeaParser;
 
+    void appLoaded();
     void updateMainWindow();
     void pushLocationData();
     void logLocationData();
@@ -33,6 +33,8 @@ signals:
 
 public slots:
     void serialLineReceived(const char *line);
+    void serialConnect(const QString device);
+    void serialDisconnect();
 
 };
 

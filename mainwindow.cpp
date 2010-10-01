@@ -7,6 +7,7 @@
 #include "locationserverdialog.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "gpsutilityapplication.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -67,35 +68,26 @@ void MainWindow::on_actionConnect_triggered()
     int ret = dlg->exec();
 
     if (ret) {
-        qApp->serialConnect(dlg->getSerialPort());
+        emit openSerialDevice(dlg->getSerialPort().toAscii());
     }
 }
 
 void MainWindow::on_actionDisconnect_triggered()
 {
-    if (lineReader->isRunning()) {
-        lineReader->stop();
-        qDebug("Waiting for thread to terminate...");
-        while (lineReader->isRunning());
-        delete lineReader;
-        qDebug("LineReader is stopped");
-        ui->actionConnect->setEnabled(true);
-        ui->actionDisconnect->setEnabled(false);
-        statusLabel->setText("No GPS Connected");
-    }
+    emit closeSerialDevice();
 }
 
 void MainWindow::gpsConnected()
 {
     ui->actionConnect->setEnabled(false);
     ui->actionDisconnect->setEnabled(true);
-    statusLabel->setText(QString("Connected to GPS device on serial port %1").arg(serialPort));
-    qDebug("Serial device opened");
 }
 
 void MainWindow::gpsDisconnected()
 {
-
+    ui->actionConnect->setEnabled(true);
+    ui->actionDisconnect->setEnabled(false);
+    statusLabel->setText("No GPS Connected");
 }
 
 void MainWindow::mapLoadStarted()
@@ -148,4 +140,12 @@ void MainWindow::setLocation(double latitude, double longitude, double altitude,
 void MainWindow::setStatusBarText(const QString text)
 {
     statusLabel->setText(text);
+}
+
+void MainWindow::setGpsTime(int hours, int minutes, double seconds)
+{
+    locationWidget->setTime(QString("%1:%2:%3")
+                            .arg(nmeaParser->utcHours(), 2, 10, QChar('0'))
+                            .arg(nmeaParser->utcMinutes(), 2, 10, QChar('0'))
+                            .arg(nmeaParser->utcSeconds(), 2, 'g', -1, QChar('0')));
 }

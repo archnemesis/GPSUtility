@@ -21,7 +21,7 @@ public:
 	void stop();
     void setPort(const QString port);
 signals:
-	void lineReceived(char *data);
+        void lineReceived(const char *data);
     void connected();
     void disconnected();
 protected:
