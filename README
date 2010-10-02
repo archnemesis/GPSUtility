@@ -1,0 +1,7 @@
+GPSUtility
+
+A Qt-based GUI to do anything you may need to do with a standard GPS
+receiver. Supports any GPS device that outputs NMEA data to either a
+serial port or via a USB-to-Serial adapter.
+
+Author: Robin G
