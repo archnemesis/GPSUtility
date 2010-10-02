@@ -68,6 +68,7 @@ void MainWindow::on_actionConnect_triggered()
     int ret = dlg->exec();
 
     if (ret) {
+	// what happened here?
         emit openSerialDevice(dlg->getSerialPort().toAscii());
     }
 }
